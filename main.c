@@ -6,13 +6,11 @@
 /*   By: gbierny <gbierny@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:52:28 by gbierny           #+#    #+#             */
-/*   Updated: 2022/07/14 17:39:58 by gbierny          ###   ########.fr       */
+/*   Updated: 2022/07/14 17:51:28 by gbierny          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include "stdlib.h"
-#include "unistd.h"
 
 char	*parsing(char *s, char *cmd)
 {
