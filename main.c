@@ -6,28 +6,13 @@
 /*   By: gbierny <gbierny@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:52:28 by gbierny           #+#    #+#             */
-/*   Updated: 2022/06/28 22:35:22 by gbierny          ###   ########.fr       */
+/*   Updated: 2022/07/14 17:39:58 by gbierny          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 #include "stdlib.h"
-#include "stdio.h"
 #include "unistd.h"
-
-void	print_tab(char **tab)
-{
-	int	x;
-
-	if (!tab)
-		return ;
-	x = 0;
-	while (tab[x])
-	{
-		printf("%s\n", tab[x]);
-		x++;
-	}
-}
 
 char	*parsing(char *s, char *cmd)
 {
@@ -88,9 +73,11 @@ int	main(int argc, char **argv, char **envp)
 	if (!p.ev)
 		error_message("path introuvable dans envp");
 	p.fd[0] = open(argv[1], O_RDONLY);
-	if (p.fd[0] <= 0)
+	if (p.fd[0] < 0)
 		error_message("infile non valide\n");
 	p.fd[1] = open(argv[4], O_CREAT | O_RDWR | O_TRUNC, 0644);
+	if (!p.fd[1])
+		error_message("probleme avec la creation du outfile");
 	p.pid1 = fork();
 	if (!p.pid1)
 		first_child(&p, envp);

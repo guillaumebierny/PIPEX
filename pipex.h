@@ -6,7 +6,7 @@
 /*   By: gbierny <gbierny@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:57:13 by gbierny           #+#    #+#             */
-/*   Updated: 2022/06/28 22:45:13 by gbierny          ###   ########.fr       */
+/*   Updated: 2022/07/14 17:41:57 by gbierny          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "./libft/libft.h"
 # include "./libft/get_next_line.h"
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_parsing
 {
